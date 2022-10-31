@@ -29,11 +29,15 @@
         </style>
     </head>
     <body class="antialiased">
-        <div>
-            
-           <h1>Bienvenido al Administrador de artículos VUE/LARAVEL</h1> 
+
+        <div class="margin-auto" >
+
+           <h1 style="text-align: center">Bienvenido al Administrador de artículos VUE/LARAVEL</h1> 
+
+           <p style="text-align: center">Se podrá agregar, editar y eliminar articulos.</p>
             
         </div>
+
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
