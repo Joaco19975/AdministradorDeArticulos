@@ -19,24 +19,15 @@
             margin: 0;
             padding: 0;
             unicode-bidi: embed;
+            font-family: 'Nunito', sans-serif;
             }
         </style>
 
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
     </head>
+
     <body class="antialiased">
 
-        <div class="margin-auto" >
-
-           <h1 style="text-align: center">Bienvenido al Administrador de artículos VUE/LARAVEL</h1> 
-
-           <p style="text-align: center">Se podrá agregar, editar y eliminar articulos.</p>
-            
-        </div>
+        
 
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
@@ -55,5 +46,12 @@
 
             </div>
         </div>
+
+        <div> 
+
+        <example />
+
+        </div>
+        
     </body>
 </html>

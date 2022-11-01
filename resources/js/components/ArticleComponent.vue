@@ -91,16 +91,24 @@
         <div class="col-6 md-6">
           <nav aria-label="Page navigation example">
            <ul class="pagination">
-            <li class="page-item"><a class="page-link"  :class="{disabled :pagination.page == 1 }" @click="pagination.page --; listar();" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" v-for="n in articles.last_page" :key="n" :class="{active:pagination.page==n}" @click="pagination.page = n; listar();" href="#" >{{n}}</a></li>
-            <li class="page-item"><a class="page-link" :class="{disabled :pagination.page == articles.last_page  }"  @click="pagination.page ++; listar();" href="#">Next</a></li>
-            <li class="page-item"><a class="page-link" :class="{disabled :pagination.page == articles.last_page  }" @click="pagination.page = articles.last_page; listar();" href="#">Last page</a></li>
+            <li class="page-item">
+              <a class="page-link"  :class="{disabled :pagination.page == 1 }" @click="pagination.page --; listar();" href="#">Previous</a>
+            </li>
+            <li class="page-item" v-for="n in articles.last_page" :key="n" >
+              <a class="page-link" :class="{active:pagination.page == n}"  @click=" pagination.page = n; listar();" href="#" > {{n}} </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" :class="{disabled :pagination.page == articles.last_page  }"  @click="pagination.page ++; listar();" href="#">Next</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" :class="{disabled :pagination.page == articles.last_page  }" @click="pagination.page = articles.last_page; listar();" href="#">Last page</a>
+            </li>
             </ul>
           </nav>
 
 
         </div>
-        
+
 
       </div>
 
@@ -128,7 +136,7 @@ export default {
             errors: {},
             pagination: {
               page:1,
-              per_page:5,
+              per_page:3,
             },
            
         }
