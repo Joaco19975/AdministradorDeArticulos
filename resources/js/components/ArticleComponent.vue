@@ -94,7 +94,7 @@
             <li class="page-item">
               <a class="page-link"  :class="{disabled :pagination.page == 1 }" @click="pagination.page --; listar();" href="#">Previous</a>
             </li>
-            <li class="page-item" v-for="n in articles.last_page" :key="n" >
+            <li class="page-item"  >
               <a class="page-link" :class="{active:pagination.page == n}"  @click=" pagination.page = n; listar();" href="#" > {{n}} </a>
             </li>
             <li class="page-item">
