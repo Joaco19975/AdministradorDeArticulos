@@ -29276,83 +29276,90 @@ var render = function () {
       _vm._v(" "),
       _c("div", { staticClass: "col-6 md-6" }, [
         _c("nav", { attrs: { "aria-label": "Page navigation example" } }, [
-          _c("ul", { staticClass: "pagination" }, [
-            _c("li", { staticClass: "page-item" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "page-link",
-                  class: { disabled: _vm.pagination.page == 1 },
-                  attrs: { href: "#" },
-                  on: {
-                    click: function ($event) {
-                      _vm.pagination.page--
-                      _vm.listar()
+          _c(
+            "ul",
+            { staticClass: "pagination" },
+            [
+              _c("li", { staticClass: "page-item" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "page-link",
+                    class: { disabled: _vm.pagination.page == 1 },
+                    attrs: { href: "#" },
+                    on: {
+                      click: function ($event) {
+                        _vm.pagination.page--
+                        _vm.listar()
+                      },
                     },
                   },
-                },
-                [_vm._v("Previous")]
-              ),
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "page-item" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "page-link",
-                  class: { active: _vm.pagination.page == _vm.n },
-                  attrs: { href: "#" },
-                  on: {
-                    click: function ($event) {
-                      _vm.pagination.page = _vm.n
-                      _vm.listar()
+                  [_vm._v("Previous")]
+                ),
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.articles.last_page, function (n) {
+                return _c("li", { key: n, staticClass: "page-item" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "page-link",
+                      class: { active: _vm.pagination.page == n },
+                      attrs: { href: "#" },
+                      on: {
+                        click: function ($event) {
+                          _vm.pagination.page = n
+                          _vm.listar()
+                        },
+                      },
+                    },
+                    [_vm._v(" " + _vm._s(n) + " ")]
+                  ),
+                ])
+              }),
+              _vm._v(" "),
+              _c("li", { staticClass: "page-item" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "page-link",
+                    class: {
+                      disabled: _vm.pagination.page == _vm.articles.last_page,
+                    },
+                    attrs: { href: "#" },
+                    on: {
+                      click: function ($event) {
+                        _vm.pagination.page++
+                        _vm.listar()
+                      },
                     },
                   },
-                },
-                [_vm._v(" " + _vm._s(_vm.n) + " ")]
-              ),
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "page-item" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "page-link",
-                  class: {
-                    disabled: _vm.pagination.page == _vm.articles.last_page,
-                  },
-                  attrs: { href: "#" },
-                  on: {
-                    click: function ($event) {
-                      _vm.pagination.page++
-                      _vm.listar()
+                  [_vm._v("Next")]
+                ),
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "page-item" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "page-link",
+                    class: {
+                      disabled: _vm.pagination.page == _vm.articles.last_page,
+                    },
+                    attrs: { href: "#" },
+                    on: {
+                      click: function ($event) {
+                        _vm.pagination.page = _vm.articles.last_page
+                        _vm.listar()
+                      },
                     },
                   },
-                },
-                [_vm._v("Next")]
-              ),
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "page-item" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "page-link",
-                  class: {
-                    disabled: _vm.pagination.page == _vm.articles.last_page,
-                  },
-                  attrs: { href: "#" },
-                  on: {
-                    click: function ($event) {
-                      _vm.pagination.page = _vm.articles.last_page
-                      _vm.listar()
-                    },
-                  },
-                },
-                [_vm._v("Last page")]
-              ),
-            ]),
-          ]),
+                  [_vm._v("Last page")]
+                ),
+              ]),
+            ],
+            2
+          ),
         ]),
       ]),
     ]),
