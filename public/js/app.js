@@ -5429,6 +5429,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -29025,8 +29031,365 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* binding */ render),
 /* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
 /* harmony export */ });
-var render = function () {}
-var staticRenderFns = []
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("h1", { staticClass: "text-center" }, [_vm._v("Manage Articles")]),
+    _vm._v(" "),
+    _c(
+      "button",
+      {
+        staticClass: "btn btn-primary my-4",
+        attrs: { type: "button" },
+        on: {
+          click: function ($event) {
+            _vm.modify = false
+            _vm.abrirModal()
+          },
+        },
+      },
+      [_vm._v("\n  New Article\n")]
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "modal", class: { mostrar: _vm.modal } }, [
+      _c("div", { staticClass: "modal-dialog" }, [
+        _c("div", { staticClass: "modal-content" }, [
+          _c("div", { staticClass: "modal-header" }, [
+            _c("h4", { staticClass: "modal-title" }, [
+              _vm._v(_vm._s(_vm.titleModal)),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "modal-body" }, [
+            _c("form", [
+              _c("div", { staticClass: "my-4" }, [
+                _c(
+                  "label",
+                  { staticClass: "form-control", attrs: { for: "name" } },
+                  [_vm._v("Name")]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.article.name,
+                      expression: "article.name",
+                    },
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text", placeholder: "Name...", id: "name" },
+                  domProps: { value: _vm.article.name },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.article, "name", $event.target.value)
+                    },
+                  },
+                }),
+                _vm._v(" "),
+                _vm.errors.name
+                  ? _c("span", { staticClass: "text-danger" }, [
+                      _vm._v(_vm._s(_vm.errors.name[0])),
+                    ])
+                  : _vm._e(),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "my-4" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass: "form-control",
+                    attrs: { for: "description" },
+                  },
+                  [_vm._v("Description")]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.article.description,
+                      expression: "article.description",
+                    },
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "text",
+                    placeholder: "Description...",
+                    id: "description",
+                  },
+                  domProps: { value: _vm.article.description },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.article, "description", $event.target.value)
+                    },
+                  },
+                }),
+                _vm._v(" "),
+                _vm.errors.description
+                  ? _c("span", { staticClass: "text-danger" }, [
+                      _vm._v(_vm._s(_vm.errors.description[0])),
+                    ])
+                  : _vm._e(),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "my-4" }, [
+                _c(
+                  "label",
+                  { staticClass: "form-control", attrs: { for: "stock" } },
+                  [_vm._v("Stock")]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.article.stock,
+                      expression: "article.stock",
+                    },
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "number",
+                    placeholder: "Stock...",
+                    id: "stock",
+                  },
+                  domProps: { value: _vm.article.stock },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.article, "stock", $event.target.value)
+                    },
+                  },
+                }),
+                _vm._v(" "),
+                _vm.errors.stock
+                  ? _c("span", { staticClass: "text-danger" }, [
+                      _vm._v(_vm._s(_vm.errors.stock)),
+                    ])
+                  : _vm._e(),
+              ]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "modal-footer" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-secondary",
+                attrs: { type: "button", "data-dismiss": "modal" },
+                on: {
+                  click: function ($event) {
+                    return _vm.cerrarModal()
+                  },
+                },
+              },
+              [_vm._v("Close")]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-success",
+                attrs: { type: "button", "data-dismiss": "modal" },
+                on: {
+                  click: function ($event) {
+                    return _vm.guardar()
+                  },
+                },
+              },
+              [_vm._v("Save")]
+            ),
+          ]),
+        ]),
+      ]),
+    ]),
+    _vm._v(" "),
+    _c("table", { staticClass: "table table-striped" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "tbody",
+        _vm._l(_vm.articles.data, function (art) {
+          return _c("tr", { key: art.id }, [
+            _c("th", { attrs: { scope: "row" } }, [_vm._v(_vm._s(art.id))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(art.name))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(art.description))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(art.stock))]),
+            _vm._v(" "),
+            _c("td", [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-warning",
+                  on: {
+                    click: function ($event) {
+                      _vm.modify = true
+                      _vm.abrirModal(art)
+                    },
+                  },
+                },
+                [_vm._v("Edit")]
+              ),
+            ]),
+            _vm._v(" "),
+            _c("td", [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-danger",
+                  on: {
+                    click: function ($event) {
+                      return _vm.eliminar(art.id)
+                    },
+                  },
+                },
+                [_vm._v("Delete")]
+              ),
+            ]),
+          ])
+        }),
+        0
+      ),
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-4 md-4" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-2 md-2" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-6 md-6" }, [
+        _c("nav", { attrs: { "aria-label": "Page navigation example" } }, [
+          _c(
+            "ul",
+            { staticClass: "pagination" },
+            [
+              _c("li", { staticClass: "page-item" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "page-link",
+                    class: { disabled: _vm.pagination.page == 1 },
+                    attrs: { href: "#" },
+                    on: {
+                      click: function ($event) {
+                        _vm.pagination.page--
+                        _vm.listar()
+                      },
+                    },
+                  },
+                  [_vm._v("Previous")]
+                ),
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.articles.last_page, function (n) {
+                return _c("li", { key: n, staticClass: "page-item" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "page-link",
+                      class: { active: _vm.pagination.page == n },
+                      attrs: { href: "#" },
+                      on: {
+                        click: function ($event) {
+                          _vm.pagination.page = n
+                          _vm.listar()
+                        },
+                      },
+                    },
+                    [_vm._v(" " + _vm._s(n) + " ")]
+                  ),
+                ])
+              }),
+              _vm._v(" "),
+              _c("li", { staticClass: "page-item" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "page-link",
+                    class: {
+                      disabled: _vm.pagination.page == _vm.articles.last_page,
+                    },
+                    attrs: { href: "#" },
+                    on: {
+                      click: function ($event) {
+                        _vm.pagination.page++
+                        _vm.listar()
+                      },
+                    },
+                  },
+                  [_vm._v("Next")]
+                ),
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "page-item" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "page-link",
+                    class: {
+                      disabled: _vm.pagination.page == _vm.articles.last_page,
+                    },
+                    attrs: { href: "#" },
+                    on: {
+                      click: function ($event) {
+                        _vm.pagination.page = _vm.articles.last_page
+                        _vm.listar()
+                      },
+                    },
+                  },
+                  [_vm._v("Last page")]
+                ),
+              ]),
+            ],
+            2
+          ),
+        ]),
+      ]),
+    ]),
+  ])
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("#")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Name")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Description")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Stock")]),
+        _vm._v(" "),
+        _c(
+          "th",
+          { staticClass: "text-center", attrs: { scope: "col", colspan: "2" } },
+          [_vm._v("Actions")]
+        ),
+      ]),
+    ])
+  },
+]
+render._withStripped = true
 
 
 

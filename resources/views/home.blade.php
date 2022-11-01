@@ -4,7 +4,6 @@
 <div class="container">
    
     <articles />
-    <example />
-
+ 
 </div>
 @endsection
